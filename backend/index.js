@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // MongoDB connection
-const mongo_url = 'mongodb://127.0.0.1:27017/instifood';
+const mongo_url = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/instifood';
 main()
 .then( () => {
     console.log("connection is sucessfull");
